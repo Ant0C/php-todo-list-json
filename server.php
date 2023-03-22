@@ -5,11 +5,11 @@
 $todo_string = file_get_contents('./todolist.json');
 
 // Leggiamo la stringa preso dal file Json
-$todo_list = json_decode($todo_string, true);
+//$todo_list = json_decode($todo_string, true);
 
-header('Content-Type: application/json');
+Header('Content-Type: application/json');
 
-echo $todo_list;
+echo $todo_string;
 //var_dump($todo_list);
 
 //****/
