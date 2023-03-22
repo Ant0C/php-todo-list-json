@@ -1,6 +1,18 @@
 <?php 
+
+// Con lettura da file Json
+// Leggiamo il file Json ed lo trsformiamo in stringa
+$todo_string = file_get_contents('./todolist.json');
+
+// Leggiamo la stringa preso dal file Json
+$todo_list = json_decode($todo_string, true);
+
 header('Content-Type: application/json');
 
+echo $todo_list;
+//var_dump($todo_list);
+
+//****/
 // Con array presente in php
 // $list = [
 //     [
@@ -22,12 +34,5 @@ header('Content-Type: application/json');
 // ];
 
 //echo json_encode($list);
-
-// Con lettura da file Json
-// Leggiamo il file Json ed lo trsformiamo in stringa
-$todo_string = file_get_contents('./todolist.json');
-// Leggiamo la stringa preso dal file Json
-$todo_list = json_decode($todo_string, true);
-
-//var_dump($todo_list);
+//****/
 ?>
