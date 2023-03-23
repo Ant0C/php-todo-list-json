@@ -11,16 +11,19 @@
 <body>
     <div id="app">
         <section>
-        <div class="">
-            <h1 class="fs-1">{{ title }}</h1>
-        </div>
-        <div class="">
-            <ul class="">
-                <li v-for="element in todos" :key="element" class="">
-                    {{ element }}
-                </li>
-            </ul>
-        </div>
+            <div class="">
+                <h1>{{ title }}</h1>
+            </div>
+            <div class="">
+                <ul class="">
+                    <li v-for="element in todos" :key="element" class="">
+                        {{ element.text }}
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <input @keyup.enter="addTask" type="text" name="todo" placeholder="New task" v-model="newTodo">
+            </div>
         </section>
     </div>
     <script src="./app.js"></script>

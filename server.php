@@ -5,11 +5,25 @@
 $todo_string = file_get_contents('./todolist.json');
 
 // Leggiamo la stringa preso dal file Json
-//$todo_list = json_decode($todo_string, true);
+$todo_list = json_decode($todo_string, true);
+
+$todo_text = isset($_POST["todo"]) ? $_POST["todo"] : null;
+
+if ($todo_text){
+    $todo = [
+        'text' => $todo_text,
+        'done' => false,
+    ];
+
+    $todo_list[]=$todo;
+
+    file_put_contents('./todolist.json', json_encode($todo_list));
+}
+
 
 Header('Content-Type: application/json');
 
-echo $todo_string;
+echo json_encode($todo_list);
 //var_dump($todo_list);
 
 //****/
